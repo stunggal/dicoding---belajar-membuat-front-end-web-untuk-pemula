@@ -3,7 +3,6 @@
 
 <head>
     <title>Event World</title>
-
     <style>
         .contents {
             position: fixed;
@@ -29,26 +28,30 @@
     </div>
 
     <script>
-        // Kode JavaScript kita
-        function welcome() {
-            alert('Sim salabim muncullah elemen-elemen HTML!');
-            const contents = document.querySelector('.contents');
-            contents.removeAttribute('hidden');
-        }
         function increment() {
             document.getElementById('count').innerText++;
 
             if (document.getElementById('count').innerText == 7) {
                 const hiddenMessage = document.createElement('h4');
-                hiddenMessage.innerText = 'selamat anda menemukan hadiah tersembunyi .......';
+                hiddenMessage.innerText = 'Selamat! Anda menemukan hadiah tersembunyi...';
+
                 const image = document.createElement('img');
                 image.setAttribute('src', 'https://picsum.photos/1024/768');
+
                 const contents = document.querySelector('.contents');
                 contents.appendChild(hiddenMessage).appendChild(image);
             }
         }
-        document.body.onload = welcome;
-        document.getElementById('incrementButton').onclick = increment;
+
+        function welcome() {
+            alert('Sim salabim muncullah elemen-elemen HTML!');
+            const contents = document.querySelector('.contents');
+            contents.removeAttribute('hidden');
+        }
+
+        // kita akan menulis kode menggunakan addEventListener di sini
+        window.addEventListener('load', welcome);
+        document.getElementById('incrementButton').addEventListener('click', increment);
     </script>
 </body>
 
