@@ -97,6 +97,9 @@
     </div>
     <script>
         const storageKey = 'STORAGE_KEY';
+        if (localStorage.getItem(semuaBuku) === null) {
+            localStorage.setItem(localStorageKey, 0);
+        }
         const submitAction = document.getElementById('form-data-user');
 
         function checkForStorage() {
