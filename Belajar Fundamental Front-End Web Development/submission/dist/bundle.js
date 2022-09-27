@@ -1,0 +1,1 @@
+(()=>{var e={anime:"value1",char:"value2",quote:"value2"};fetch("https://animechan.vercel.app/api/random").then((e=>e.json())).then((e=>console.log(e.anime))).then(e.anime=quote.anime),console.log(e)})();
