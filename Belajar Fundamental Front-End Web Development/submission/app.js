@@ -1,5 +1,5 @@
 
-async function foo() {
+async function getApi() {
     const res = await fetch('https://animechan.vercel.app/api/random')
 
     obj = await res.json();
@@ -11,4 +11,14 @@ async function foo() {
     document.getElementById("quote").innerHTML = obj.quote;
 }
 
-foo();
+
+let iniCustomElement = document.querySelector('iniCustom');
+
+if (!iniCustomElement) {
+    iniCustomElement = document.createElement('iniCustom');
+    document.body.appendChild(iniCustomElement);
+    iniCustomElement.setAttribute('id', 'iniCustom');
+}
+
+
+getApi();

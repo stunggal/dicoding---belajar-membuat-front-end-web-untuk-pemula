@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#drawer {
+  width: 250px;
+  height: 100%;
+  position: absolute;
+
+  /* menyembunyikan #drawer -250px (sesuai dengan ukuran lebar drawer) ke kiri */
+  transform: translate(-250px, 0);
+  transition: transform 0.3s ease-in-out;
+  background-color: #111;
+}
+
+#drawer.open {
+  transform: translate(0, 0);
+}
+
+/* styling pendukung */
+
+main {
+  padding: 16px;
+}
+
+#drawer ul {
+  list-style-type: none;
+  padding: 0 16px;
+}
+
+#drawer li {
+  padding: 5px 0px;
+}
+
+#drawer a {
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+}
+
+#hamburger {
+  font-size: 32px;
+  text-decoration: none;
+  color: black;
+}
+
+#gambar {
+  background-image: url("../public/images/heros/hero-image_1.jpg ");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Styling pendukung */
+.wrapper div {
+  border: 1px solid black;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%;
+}
+
+footer {
+  padding: 30px 0;
+  background-color: #277bc0;
+  color: #fff;
+  text-align: center;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    display: grid;
+    grid-template-columns: 300px auto;
+  }
+
+  #drawer {
+    position: relative;
+    transform: translate(0, 0);
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+  #gambar {
+    background-image: url("../public/images/heros/hero-image_3.jpg ");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  footer {
+    padding: 30px 0;
+    background-color: #277bc0;
+    color: #fff;
+    text-align: center;
+    position: static;
+  }
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
