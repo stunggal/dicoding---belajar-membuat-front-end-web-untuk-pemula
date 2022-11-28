@@ -15,20 +15,33 @@ const createMovieDetailTemplate = (movie) => `
     <p>${movie.description}</p>
   </div>
   <div class="movie__overview">
-    <h3>Lastest Review</h3>
-    <p>${movie.customerReviews[0].review}</p>
+    <h3>Reviews</h3>
+    <p>${movie.customerReviews.map(
+    ({ name, date, review }) => `
+      <p>${name}</p>
+      <p>${date}</p>
+      <p>${review}</p>
+      <br />
+    `,
+  ).join('')}</p>
   </div>
   <div class="movie__overview">
-    <h3>Top Menu</h3>
+    <h3>All Menu</h3>
     <h3>Makanan</h3>
-    <p>${movie.menus.foods[0].name}</p>
+    <p>${movie.menus.foods.map(({ name }) => `<p>${name}</p>`).join('')}</p>
     <h3>Minuman</h3>
-    <p>${movie.menus.drinks[0].name}</p>
+    <p>${movie.menus.drinks.map(({ name }) => `<p>${name}</p>`).join('')}</p>
   </div>
 `;
 
 const createMovieItemTemplate = (movie) => `
   <div class="movie-item">
+  <style>
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  </style>
     <div class="movie-item__header">
       <img class="movie-item__header__poster" alt="${movie.name}"
            src="${movie.pictureId ? CONFIG.BASE_IMAGE_URL + movie.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
@@ -37,7 +50,9 @@ const createMovieItemTemplate = (movie) => `
       </div>
     </div>
     <div class="movie-item__content">
-      <h3><a href="/#/detail/${movie.id}">${movie.name}</a></h3>
+      <h3><a href="/#/detail/${movie.id}"><pre>${movie.name}
+      
+      </pre></a></h3>
       <p>${movie.description}</p>
     </div>
   </div>

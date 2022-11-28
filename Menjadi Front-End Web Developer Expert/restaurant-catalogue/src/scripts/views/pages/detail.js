@@ -24,6 +24,7 @@ const Detail = {
         name: movie.name,
         description: movie.description,
         rating: movie.rating,
+        image: movie.pictureId,
       },
     });
   },

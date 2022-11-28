@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
   }
+
    
   body {
     font-family: 'Poppins', sans-serif;
@@ -39,6 +40,8 @@
     font-size: 18px;
     padding: 8px;
     cursor: pointer;
+    min-height: 44px;
+    min-width: 44px;
   }
    
   .app-bar .app-bar__brand {
@@ -70,6 +73,8 @@
    
   .app-bar .app-bar__navigation ul li a {
     display: inline-block;
+    min-height: 44px;
+    min-width: 44px;
     text-decoration: none;
     color: black;
     padding: 8px;
@@ -240,3 +245,22 @@
     padding: 16px;
   }
   /* Kode lainnya disembunyikan... */
+
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    padding: 8px;
+    background-color: #bf1722;
+    color: white;
+    z-index: 100;
+  }
+
+  .skip-link:focus {
+    top: 0;
+ }
+
+ a {
+  min-height: 44px;
+  min-width: 44px;
+}
